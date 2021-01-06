@@ -1,0 +1,19 @@
+<h1>Breweries</h1>
+
+<input
+  placeholder="Search"
+  type="text"
+  [(ngModel)]="search"
+  (keyup)="searchBeer()"
+/>
+
+<ul *ngIf="brewList">
+  <li *ngFor="let brew of brewList">
+    <p class="name">{{ brew.name }}</p>
+    <p class="country">{{ brew.country }}</p>
+    <p>City - {{ brew.city }}</p>
+    <p>State - {{ brew.state }}</p>
+    <p>Type - {{ brew.brewery_type }}</p>
+    <p>Street - {{ brew.street }}</p>
+  </li>
+</ul>

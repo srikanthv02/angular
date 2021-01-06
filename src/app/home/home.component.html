@@ -1,0 +1,32 @@
+<h1>Welcome to Home</h1>
+
+<div class="home-container">
+  <p>
+    You have clicked
+    <button type="button" (click)="counterClick()">this button</button>
+    {{ counterValue }} times
+  </p>
+</div>
+
+<div class="home-container">
+  <ng-template [ngIf]="counterValue > 2" [ngIfElse]="initial">
+    <p>The counter is more than 2</p>
+  </ng-template>
+  <ng-template #initial>
+    <p>The counter is less than 2</p>
+  </ng-template>
+</div>
+
+<div class="home-container">
+  <form>
+    <div>
+      <label>First Name:</label>
+      <input type="text" name="firstName" [(ngModel)]="firstName" />
+    </div>
+    <div>
+      <label>Last Name:</label>
+      <input type="text" name="lastName" [(ngModel)]="lastName" />
+    </div>
+    <p>Name is - {{ firstName }} {{ lastName }}</p>
+  </form>
+</div>
